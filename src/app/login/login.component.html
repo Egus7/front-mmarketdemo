@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header">Log in</h2>
+
+    <!-- Muestra el mensaje de error si existe -->
+    <div *ngIf="errorMensaje" class="error-message">{{ errorMensaje }}</div>
+  
+    <form #frmLogin="ngForm" class="login-container" (ngSubmit)="logearse()">
+      <p><input type="text" name="codigo" [(ngModel)]="codigo" placeholder="Username" required></p>
+      <p><input type="password" name="clave" [(ngModel)]="clave" placeholder="Password" required></p>
+      <p><input type="submit" value="submit"></p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+
+
+<!-- Tabla para mostrar la lista de usuarios -->
+
+   <!-- Se muestra cuando no existen usuarios -->
+   <div class="no-data text-center">
+    <button class="btn btn-outline-primary" routerLink="/creacionClientes">Crear cliente</button>
+  </div>
+  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <button class="nav-link btn btn-link" onclick="window.location.href='/home'">Regresar</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link btn btn-link" onclick="window.location.href='/login'">Cerrar Sesion</button>
+    </li>
+  </ul>
+
+<table>
+<thead>
+  <tr>
+    <th>Cédula</th>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Dirección</th>
+    <th>Clave</th>
+    <th>Acciones</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let clientes of clientes">
+    <td>{{ clientes.cedula_cliente }}</td>
+    <td>{{ clientes.nombres }}</td>
+    <td>{{ clientes.apellidos }}</td>
+    <td>{{ clientes.direccion }}</td>
+    <td>{{ clientes.clave }}</td>
+    <td>
+      <!-- Agregar botones de editar y eliminar 
+      <button routerLink="/edicionUsuario/{{usuario.id_seg_usuario}}">Editar</button>-->
+      <button (click)="eliminarCliente(clientes._id)">Eliminar</button>
+    </td>
+  </tr>
+</tbody>
+</table>

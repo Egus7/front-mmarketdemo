@@ -1,0 +1,26 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <h3 class="mb-3 text-center">Crear usuario</h3>
+        <div class="form-group">            
+            <input type="text" id="codigo" [(ngModel)]="usuario.codigo" class="form-control" placeholder="Codigo">
+        </div>
+        <div class="form-group">
+            <input type="text" id="nombres" [(ngModel)]="usuario.nombres" class=" form-control"placeholder="Nombre">
+        </div>
+        <div class="form-group">
+            <input type="text" id="apellidos" [(ngModel)]="usuario.apellidos" class="form-control" placeholder="Apellido">
+        </div>
+        <div class="form-group">
+            <input type="email" id="correo" [(ngModel)]="usuario.correo" class="form-control" placeholder="Correo">
+        </div>
+        <div class="form-group">
+            <input type="password" id="clave" [(ngModel)]="usuario.clave" class="form-control" placeholder="Clave">
+        </div>
+        <div class="form-group">
+            <input type="hidden" id="activo" [(ngModel)]="usuario.activo" class="form-control" placeholder="Activo">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" (click)="addUsuario()"  >Crear</button>
+        </div>
+    </div>
+</div>

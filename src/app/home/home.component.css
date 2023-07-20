@@ -1,0 +1,55 @@
+
+/* Estilos para el fondo del navbar */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+/* Estilos para los botones del navbar */
+.navbar .nav-link {
+  color: #007bff; /* Color del texto en los botones */
+  text-decoration: none; /* Quitar el subrayado de los enlaces */
+  margin-right: 10px;
+  border: 1px solid #007bff; /* Agregar un borde alrededor de los botones */
+  padding: 8px 15px; /* Ajustar el espaciado interno de los botones */
+  border-radius: 5px; /* Redondear los bordes de los botones */
+  transition: background-color 0.3s, color 0.3s; /* Agregar transición al cambiar color y fondo */
+}
+
+/* Estilos para el botón activo */
+.navbar .nav-item.active .nav-link {
+  font-weight: bold;
+}
+
+/* Estilos para los botones en hover */
+.navbar .nav-link:hover {
+  color: #0056b3; /* Cambiar color al pasar el mouse por encima */
+  background-color: #e8f0fe; /* Cambiar el fondo al pasar el mouse por encima */
+}
+
+/* Estilos para el contenedor de los botones */
+.navbar .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Estilos para los elementos del contenedor */
+.navbar .nav-item {
+  margin-bottom: 5px;
+}
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* Ajusta el espaciado superior según tus necesidades */
+}
+
+/* Estilos para la imagen centrada */
+.center-image {
+  max-width: 175%;
+  max-height: 450px; /* Ajusta la altura máxima de la imagen según tus necesidades */
+  border-radius: 10px; /* Opcional: redondear los bordes de la imagen */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: agregar sombra a la imagen */
+}

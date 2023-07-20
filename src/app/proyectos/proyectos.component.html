@@ -1,0 +1,43 @@
+
+<!-- Tabla para mostrar la lista de usuarios -->
+
+   <div class="no-data text-center">
+      <button class="btn btn-outline-primary" routerLink="/creacionProyectos">Crear Proyecto</button> 
+    </div>
+    
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button class="nav-link btn btn-link" onclick="window.location.href='/home'">Regresar</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn btn-link" onclick="window.location.href='/login'">Cerrar Sesion</button>
+      </li>
+    </ul>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Fecha Inicio</th>
+      <th>Fecha Fin</th>
+      <th>Estado</th>
+      <th>Avance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proyectos of proyectos">
+      <td>{{ proyectos.id_pry_proyecto }}</td>
+      <td>{{ proyectos.nombre }}</td>
+      <td>{{ proyectos.fecha_inicio | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ proyectos.fecha_fin | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ proyectos.estado }}</td>
+      <td>{{ proyectos.avance }}</td>
+      <td>
+        <!-- Agregar botones de editar y eliminar 
+        <button routerLink="/edicionUsuario/{{usuario.id_seg_usuario}}">Editar</button>-->
+        <button (click)="eliminarProyecto(proyectos.id_pry_proyecto)">Eliminar</button> 
+      </td>
+    </tr>
+  </tbody>
+</table>

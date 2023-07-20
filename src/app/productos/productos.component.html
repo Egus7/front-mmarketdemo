@@ -1,0 +1,47 @@
+
+<!-- Tabla para mostrar la lista de usuarios -->
+
+<div class="no-data text-center">
+    <button class="btn btn-outline-primary" routerLink="/creacionProductos">Crear Producto</button> 
+  </div>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <button class="nav-link btn btn-link" onclick="window.location.href='/home'">Regresar</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link btn btn-link" onclick="window.location.href='/login'">Cerrar Sesion</button>
+    </li>
+  </ul>
+
+<table>
+<thead>
+  <tr>
+    <th>Código Producto</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Precio Unitario</th>
+    <th>Existencia</th>
+    <th>Tiene impuesto</th>
+    <th>Imágen</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let productos of productos">
+    <td>{{ productos.codigo_producto}}</td>
+    <td>{{ productos.nombre }}</td>
+    <td>{{ productos.descripcion}}</td>
+    <td>{{ productos.precio_unitario}}</td>
+    <td>{{ productos.existencia }}</td>
+    <td>{{ productos.tiene_impuesto}}</td>
+    <td>
+      <img src="{{ productos.image_producto }}" alt="Imagen del producto" height="100px" width="100px">
+    </td>
+    <td>
+      <!-- Agregar botones de editar y eliminar 
+      <button routerLink="/edicionUsuario/{{usuario.id_seg_usuario}}">Editar</button>-->
+      <button (click)="eliminarProducto(productos._id)">Eliminar</button> 
+    </td>
+  </tr>
+</tbody>
+</table>

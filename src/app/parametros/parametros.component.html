@@ -1,0 +1,23 @@
+
+<!-- Tabla para mostrar la lista de usuarios -->
+
+
+<table>
+<thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Parametro</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let parametros of parametros">
+    <td>{{ parametros.nombre_parametro }}</td>
+    <td>{{ parametros.valor_parametro}}</td>
+    <td>
+      <!-- Agregar botones de editar y eliminar 
+      <button routerLink="/edicionUsuario/{{usuario.id_seg_usuario}}">Editar</button>-->
+      
+    </td>
+  </tr>
+</tbody>
+</table>

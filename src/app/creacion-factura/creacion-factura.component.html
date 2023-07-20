@@ -1,0 +1,75 @@
+<div class="container mt-4">
+    <div class="mb-3">
+      <form id="form-factura">
+        <div class="modal-body">
+          <div class="mb-3">
+            <h4>Cabecera Factura</h4>
+            <div class="form-group">
+              <label for="numero_factura">Número de Factura:</label>
+              <input type="text" name="numero_factura" id="numero_factura" [(ngModel)]="factura.numero_factura" class="form-control" placeholder="Número factura" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="cedula_cliente">Cédula Cliente:</label>
+              <input type="text" name="cedula_cliente" id="cedula_cliente" [(ngModel)]="factura.cedula_cliente" class="form-control" placeholder="Cédula cliente" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="fecha_emision">Fecha de Emisión:</label>
+              <input type="datetime-local" name="fecha_emision" id="fecha_emision" [(ngModel)]="factura.fecha_emision" class="form-control" placeholder="Fecha emisión" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="subtotal">Subtotal:</label>
+              <input type="number" name="subtotal" id="subtotal" [(ngModel)]="factura.subtotal" class="form-control" placeholder="Subtotal" required>
+            </div>
+  
+  
+            <div class="form-group">
+              <label for="base_cero">Base Cero:</label>
+              <input type="number" name="base_cero" id="base_cero" [(ngModel)]="factura.base_cero" class="form-control" placeholder="Base Cero" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="valor_iva">Valor IVA:</label>
+              <input type="number" name="valor_iva" id="valor_iva" [(ngModel)]="factura.valor_iva" class="form-control" placeholder="Valor Iva" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="total">Total:</label>
+              <input type="number" name="total" id="total" [(ngModel)]="factura.total" class="form-control" placeholder="Total" required>
+            </div>
+            <div class="form-group">
+              <label for="estado">Estado:</label>
+              <input type="checkbox" name="estado" id="estado" [(ngModel)]="factura.estado" class="form-control" required>
+            </div>
+          </div>
+        </div>
+        <h4>Detalle Factura</h4>
+        <table id="tabla-detalle-factura">
+          <thead>
+            <tr>
+              <th>N° Factura Detalle</th>
+              <th>N° Factura</th>
+              <th>Código Producto</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="number" name="numero-factura-detalle" [(ngModel)]="factura.numero_factura_det" required></td>
+              <td><input type="text" name="numero_factura" [(ngModel)]="factura.numero_factura" required></td>
+              <td><input type="text" name="codigo-producto" [(ngModel)]="factura.codigo_producto" required></td>
+              <td><input type="number" name="cantidad" [(ngModel)]="factura.cantidad" required></td>
+              <td><input type="number" name="precio-unitario" [(ngModel)]="factura.precio_unitario_venta" required></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" (click)="addFactura()">Crear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

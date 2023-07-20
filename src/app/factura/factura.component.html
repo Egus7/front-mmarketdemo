@@ -1,0 +1,76 @@
+<!-- Tabla para mostrar la lista de usuarios -->
+<div class="no-data text-left">
+    <button class="btn btn-success btn-lg btn-block" routerLink="/home">Regresar</button> 
+  </div>  
+  
+  <div class="no-data text-center">
+    <button class="btn btn-outline-primary" routerLink="/creacionFacturas">Crear Factura</button> 
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Num Factura</th>
+        <th>Cédula cliente</th>
+        <th>Fecha emisión</th>
+        <th>Subtotal</th>
+        <th>Base cero</th>
+        <th>IVA</th>
+        <th>Total</th>
+        <th>Estado</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of facturas">
+        <!--td>{{ factura.numero_factura}}</td-->
+        <td>{{ factura.cedula_cliente }}</td>
+        <td>{{ factura.fecha_emision | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ factura.subtotal }}</td>
+        <td>{{ factura.base_cero }}</td>
+        <td>{{ factura.valor_iva }}</td>
+        <td>{{ factura.total }}</td>
+        <td>{{ factura.estado }}</td>
+        <button type="button" class="btn btn-primary" (click)="toggleTable(factura.numero_factura)">Mostrar Detalle</button>
+        <td>
+          <!-- Agregar botón para mostrar la tabla debajo -->
+          <div [attr.id]="'detalleFacturaTable' + factura.numero_factura" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>N° Factura</th>
+                  <th>Código Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Agregar aquí los detalles de la factura en esta tabla -->
+                <tr *ngFor="let detalle of factura.facturaDetalles">
+                  <td>{{ detalle.numero_factura }}</td>
+                  <td>{{ detalle.codigo_producto }}</td>
+                  <td>{{ detalle.cantidad }}</td>
+                  <td>{{ detalle.precio_unitario_venta }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Agregar botón para mostrar la tabla modal -->
+           
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Agrega aquí el enlace al archivo jQuery y a los scripts de Bootstrap (si aún no lo has hecho) -->
+<!-- <script src="ruta/del/archivo/jquery.min.js"></script> -->
+<!-- <script src="ruta/del/archivo/bootstrap.min.js"></script> -->
+
+<script>
+    
+  </script>
+  <!-- Tabla modal para mostrar el detalle de la factura -->
+  <div *ngFor="let factura of facturas" class="modal fade" [attr.id]="'detalleFacturaModal' + factura.numero_factura" tabindex="-1" role="dialog"
+    aria-labelledby="detalleFacturaModalLabel" aria-hidden="true">
+    <!-- ... (contenido de la tabla modal, tal como se mostró en la respuesta anterior)... -->
+  </div>
+  
